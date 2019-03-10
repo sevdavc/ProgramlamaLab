@@ -1,0 +1,59 @@
+v=[1,2,3]
+w=[2,4,6]
+a=[1,2,3,2,4,6]
+b=[11,22,33,22,44,66]
+
+def my_vector_addition(v,w):
+    size=len(v)
+    my_result=[]
+    for i in range(size):
+        my_result.append(0)
+    for i in range(size):
+        my_result[i]=v[i]+w[i]
+    return my_result
+print(my_vector_addition(v,w))
+
+def my_vector_substraction(v,w):
+    size=len(v)
+    my_result=[]
+    for i in range(size):
+        my_result.append(0)
+    for i in range(size):
+        my_result[i]=v[i]-w[i]
+    return my_result
+
+def my_vector_scalar_product(alpha,v):
+    size = len(v)
+    my_result = []
+    for i in range(size):
+        my_result.append(0)
+    for i in range(size):
+        my_result[i] = v[i]*alpha
+    return my_result
+
+
+alpha=5
+beta=10
+c=my_vector_scalar_product(alpha,a)
+d=my_vector_scalar_product(beta,b)
+e=my_vector_addition(c,d)
+f=my_vector_substraction(a,b)
+
+print(c,"\n",d,"\n",e,"\n",f)
+
+def my_vector_Inner_Product(v,w):
+    size = len(v)
+    my_result = []
+    for i in range(size):
+        my_result.append(0)
+    for i in range(size):
+        my_result[i] = v[i]*w[i]
+    t=0
+    for i in range(size):
+        t+=my_result[i]
+
+    return t,my_result
+
+a=[1,2]
+b=[3,5]
+print(my_vector_Inner_Product(a,b))
