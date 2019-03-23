@@ -1,0 +1,25 @@
+#Para üstü olarak en az şekilde para vermeyi planlayan algoritma
+
+coin=[25,21,10,5,1]
+
+def paraustu(para,liste):
+    tambolunme=[]
+    toplamli=[]
+    m=para
+    for i in liste:
+        if(m%i==0 and i!=1):
+            while(m>0):
+                print(i)
+                m=m-i
+                tambolunme.append(i)
+    for j in liste:
+        while (para >= j):
+            print(j)
+            para = para - j
+            toplamli.append(j)
+    if(len(tambolunme)>=len(toplamli)):
+        print(toplamli)
+    else:
+        print(tambolunme)
+
+paraustu(30,coin)
