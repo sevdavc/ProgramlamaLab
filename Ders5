@@ -1,0 +1,28 @@
+##Bir sayının asal çarpanlarını bulunuz. Yoksa asal olduğunu bastırınız.
+def asalmi(sayi):
+    n=int(sayi**(1/2))
+    if(sayi%2==0):
+        return 0
+    for i in range(3,n+1):
+        if(sayi%i==0):
+            return 0
+            break
+        else:
+            continue
+    else:
+        return 1
+
+def asalcarpan(sayi):
+    if(asalmi(sayi)==1):
+        print("Sayı asaldır.")
+    else:
+        n=int(sayi/2)+1
+        for i in range(2,n):
+            if(sayi%i==0):
+                    if(asalmi(i)==1 or i==2):
+                        while(sayi%i==0):
+                            print(i)
+                            sayi/=i
+
+a=24
+asalcarpan(a)
