@@ -1,0 +1,16 @@
+#Bir sayı listesinin ardışık olarak toplamı en fazla kaçtır? (2li,3lü,4lü...)
+
+def kombinasyon(liste):
+    n = len(liste)
+    enbuyuk=0
+    for k in range(2,n+1):
+        for i in range(n - (k-1)):
+            toplam = 0
+            for j in range(i, i + k):
+                toplam += liste[j]
+            if(toplam>enbuyuk):
+                enbuyuk=toplam
+    print(enbuyuk)
+
+liste=[-2,7,-9,5,3]
+kombinasyon(liste)
