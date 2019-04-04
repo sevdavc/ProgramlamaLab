@@ -1,0 +1,12 @@
+#Verilen matristeki 0'ların sayısını geri döndüren fonksiyon
+
+def sifirsay(matris):
+    count=0
+    for i in range(len(matris)):
+        for j in range(len(matris[i])):
+            if(matris[i][j]==0):
+                count+=1
+    return count
+
+matris=[[0,5,4],[5,8,0],[7,0,6]]
+print(sifirsay(matris))
