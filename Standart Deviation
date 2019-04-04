@@ -1,0 +1,21 @@
+#Kendisine aktarılan bir listedeki sayıların ortalamasını,standart sapmasını geri döndüren fonksiyon
+
+import math
+
+def ortalama(liste):
+    toplam=0
+    for x in liste:
+        toplam+=x
+    return toplam/len(liste)
+
+def standartsapma(liste):
+    toplam=0
+    for x in liste:
+        fark=0
+        fark=(x-ortalama(liste))**2
+        toplam+=fark
+    sonuc=toplam/(len(liste)-1)
+    return sonuc**(1/2)
+
+liste=[1,2,3]
+print(standartsapma(liste))
