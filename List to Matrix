@@ -1,0 +1,16 @@
+# n*n elemana sahip bir listeyi, n*n şeklindeki bir matrise atayan kod
+
+def matrisyap(liste):
+    matris=[]
+    m=int(len(liste)**(1/2))
+    for i in range(m):
+        matris.append([])
+    n=0
+    while(n<len(liste)):
+        for i in range(m):
+            matris[i].append(liste[n])
+            n+=1
+    return matris
+
+liste=[1,2,3,4,5,6,7,8,9]
+print(matrisyap(liste))
