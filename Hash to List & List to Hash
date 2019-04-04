@@ -1,0 +1,48 @@
+#Verilen bir listeyi Hash Tablosuna çeviren ve verilen Hash Tablosunu listeye çeviren fonksiyonlar
+
+def my_function_1(m:int,n:int):
+    my_list=[]
+    for i in range(m):
+        my_list.append([])
+        for j in range(n):
+            #s=random.randint(-1,1)
+            s=-1
+            my_list[i].append(s)
+    return my_list
+
+def my_function_print(mylist):
+    m = len(mylist)
+    n = len(mylist[0])
+    for i in range(m):
+        for j in range(n):
+             print(mylist[i][j],end=" ")
+        print(" ")
+
+def my_function_convert_to_hash(mylist):
+    my_dict = {}
+    m = len(mylist)
+    n = len(mylist[0])
+    for i in range(m):
+        for j in range(n):
+            my_dict[(i, j)] = mylist[i][j]
+            # print(mylist[i][j],end=" ")
+        # print()
+    return my_dict
+
+def my_hash_convert_to_list(myhash):
+    mylist=[]
+    for i in myhash.values():
+        mylist.append(i)
+    return mylist
+
+def my_function_print_hash(myhashlist):
+    print(" ")
+    for key in myhashlist:
+        print(myhashlist[key],end=" ")
+
+
+my_2d_array=my_function_1(3,2)
+my_function_print(my_2d_array)
+print(my_function_convert_to_hash(my_2d_array))
+dict={'name':'sophie','yas':'seven'}
+print(my_hash_convert_to_list(dict))
