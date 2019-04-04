@@ -1,0 +1,12 @@
+def tersiyleaynimi(kelime):
+    j=len(kelime)-1
+    for i in range(j+1):
+        if(kelime[i]!=kelime[j]):
+            print("Tersiyle aynı değil.")
+            break
+        j-=1
+    else:
+        print("Kelime tersiyle aynı.")
+
+kelime="melekkelem"
+tersiyleaynimi(kelime)
