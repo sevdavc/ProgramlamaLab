@@ -31,4 +31,4 @@ def my_search_c(array_2,item):
             break
     return(found,indis,step)
 
-print(my_search_c(my_array,42))
+print(my_search_c(my_array,42) )
