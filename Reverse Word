@@ -1,3 +1,5 @@
+#Verilen kelimenin, kendisinin tersiyle aynı olup olmadığını döndüren fonksiyon
+
 def tersiyleaynimi(kelime):
     j=len(kelime)-1
     for i in range(j+1):
