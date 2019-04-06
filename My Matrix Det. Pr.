@@ -1,0 +1,69 @@
+#Bir matris verilsin, matrisin determinantını bulunuz.
+#b) Bir matrisin tekil matris mi olduğunu bulan fonk yazınız.
+#c) Bir matriste satır ve sütunlarının toplamı en küçük-en büyük olan satır ve sütunlarını bulunuz.
+
+def determinant(matris):
+    sayi=len(matris)
+    islemmatrisi=[]
+    for m in range(sayi):
+        islemmatrisi.append([])
+    for i in range(sayi):
+        for j in range(len(matris[i])):
+            islemmatrisi[i].append(matris[i][j])
+        for k in range(sayi-1):
+            islemmatrisi[i].append(matris[i][k])
+    toplam1=0
+    for j in range(sayi):
+        carpim1=1
+        m=j
+        for i in range(sayi):
+            carpim1*=islemmatrisi[i][m]
+            m+=1
+        toplam1+=carpim1
+    toplam2=0
+    for j in range(sayi+(sayi-2),(sayi-2),-1):
+        carpim2 = 1
+        m=j
+        for i in range(sayi):
+            carpim2 *= islemmatrisi[i][m]
+            print(i, m)
+            m-=1
+        toplam2 += carpim2
+    return toplam1-toplam2
+
+def tekilmatrismi(matris):
+    if(determinant(matris)==0):
+        return 1
+    else:
+        return 0
+
+def satirdeger(matris):
+    for i in range(len(matris)):
+        toplam=0
+        for j in range(len(matris[i])):
+            toplam+=matris[i][j]
+        if(i==0):
+            enbuyuk=toplam
+            enkucuk=toplam
+        elif(toplam>enbuyuk):
+            enbuyuk=toplam
+        elif(toplam<enkucuk):
+            enkucuk=toplam
+    return enbuyuk,enkucuk
+
+def sutundeger(matris):
+    for i in range(len(matris)):
+        toplam=0
+        for j in range(len(matris[i])):
+            toplam+=matris[j][i]
+        if(i==0):
+            enbuyuk=toplam
+            enkucuk=toplam
+        elif(toplam>enbuyuk):
+            enbuyuk=toplam
+        elif(toplam<enkucuk):
+            enkucuk=toplam
+    return enbuyuk,enkucuk
+
+matris=[[1,2,4,3],[4,2,3,3],[5,8,1,4],[7,7,4,6]]
+
